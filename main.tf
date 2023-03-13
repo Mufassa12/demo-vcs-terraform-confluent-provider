@@ -4,8 +4,8 @@
 provider "confluent" {
 }
 
-resource "confluent_environment" "2degreesdemo" {
-  display_name = "tutorial"
+resource "confluent_environment" "tutorial" {
+  display_name = "2degreesdemo"
 }
 
 # Update the config to use a cloud provider and region of your choice.
@@ -18,7 +18,7 @@ resource "confluent_kafka_cluster" "inventory" {
   # Standard supports granular RBAC for admin, producer, consumer service accounts
   standard {}
   environment {
-    id = confluent_environment.2degreesdemo.id
+    id = confluent_environment.tutorial.id
   }
 }
 
